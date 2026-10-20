@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smart-video-sorter"
+version = "1.0.0"
+description = "Local AI pipeline that sorts raw footage into talking heads and B-roll, scores highlights and renders captioned vertical shorts."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "faster-whisper>=1.0.3",
+    "rich>=13.7",
+    "typer>=0.12",
+    "requests>=2.31",
+    "Pillow>=10.3",
+    "opencv-python>=4.8,<5",  # Haar face cascades
+]
+
+[project.optional-dependencies]
+ocr = ["easyocr>=1.7", "pytesseract>=0.3.10"]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+svs = "svs.cli:app"
+
+[tool.setuptools]
+packages = ["svs"]

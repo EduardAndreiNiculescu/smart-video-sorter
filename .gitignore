@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.venv/
+# footage and outputs never belong in git
+*.mp4
+*.mov
+*.mts
+*.MTS
+*.wav
+*.db
+_temp*/
+sorted/
+demo/raw/
+demo/out/
+!docs/**
